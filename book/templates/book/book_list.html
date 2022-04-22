@@ -2,16 +2,12 @@
 <table style="border: 1px black solid;">
     <tr>
         <th>Book Name</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Date</th>
+        <th></th>
     </tr>
-    {% for book in object_list %}
+    {% for book in books %}
     <tr>
         <td>{{book.title}}</td>
-        <td>{{book.author}}</td>
-        <td>{{book.isbn}}</td>
-        <td>{{book.added}}</td>
+        <td><a href="{% url 'book_detail' book.id %}">View</a></td>
     </tr>
     {% empty %}
         <h3>No Books in List</h3>
