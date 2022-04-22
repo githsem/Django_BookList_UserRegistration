@@ -1,0 +1,19 @@
+<h2>Book List</h2>
+<table style="border: 1px black solid;">
+    <tr>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Date</th>
+    </tr>
+    {% for book in object_list %}
+    <tr>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.isbn}}</td>
+        <td>{{book.added}}</td>
+    </tr>
+    {% empty %}
+        <h3>No Books in List</h3>
+    {% endfor %}
+</table>
