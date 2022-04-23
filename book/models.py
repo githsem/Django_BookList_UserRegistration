@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Book(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     isbn = models.IntegerField()

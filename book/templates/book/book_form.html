@@ -1,5 +1,6 @@
 <h3>Book Form</h3>
-
+<p><i><a href="{% url 'books' %}">Back</a></i></p>
+<hr>
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
