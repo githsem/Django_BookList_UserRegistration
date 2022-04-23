@@ -1,0 +1,8 @@
+<h2>Book List</h2>
+<i><a href="{% url 'books' %}">back</a></i>
+<hr>
+<form method="POST">
+    {% csrf_token %}
+    <p>Do you want to Delete <b>{{book}}</b></p>
+    <input type="submit" value="Delete">
+</form>

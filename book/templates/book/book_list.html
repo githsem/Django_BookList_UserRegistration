@@ -12,6 +12,7 @@
         <td>{{book.title}}</td>
         <td><a href="{% url 'book_detail' book.id %}">View</a></td>
         <td><a href="{% url 'book-update' book.id %}">Edit</a></td>
+        <td><a href="{% url 'book-delete' book.id %}">Delete</a></td>
     </tr>
     {% empty %}
         <h3>No Books in List</h3>
