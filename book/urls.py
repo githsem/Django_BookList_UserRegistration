@@ -1,7 +1,10 @@
 from django.urls import path
-from .views import BookList, BookDetail, BookCreate, BookUpdate, BookDelete
+from .views import BookList, BookDetail, BookCreate, BookUpdate, BookDelete, CustomLoginView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('', BookList.as_view(), name='books'),
     path('book/<int:pk>', BookDetail.as_view(), name='book_detail'),
     path('book-create', BookCreate.as_view(), name='book-create'),
