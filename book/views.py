@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Book
 
@@ -17,25 +18,25 @@ class CustomLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy('books')
 
-class BookList(ListView):
+class BookList(LoginRequiredMixin, ListView):
     model = Book
     context_object_name = 'books'
 
-class BookDetail(DetailView):
+class BookDetail(LoginRequiredMixin, DetailView):
     model = Book   
     context_object_name = 'book' 
 
-class BookCreate(CreateView):
+class BookCreate(LoginRequiredMixin, CreateView):
     model = Book   
     fields = '__all__'  
     success_url = reverse_lazy('books')
 
-class BookUpdate(UpdateView):
+class BookUpdate(LoginRequiredMixin, UpdateView):
     model = Book 
     fields = '__all__'  
     success_url = reverse_lazy('books') 
 
-class BookDelete(DeleteView):
+class BookDelete(LoginRequiredMixin, DeleteView):
     model = Book
     context_object_name = 'book'
     success_url = reverse_lazy('books') 
