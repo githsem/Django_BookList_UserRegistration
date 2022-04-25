@@ -22,6 +22,11 @@ class BookList(LoginRequiredMixin, ListView):
     model = Book
     context_object_name = 'books'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['books']=context['books'].filter(user=self.request.user)
+        return context
+
 class BookDetail(LoginRequiredMixin, DetailView):
     model = Book   
     context_object_name = 'book' 
@@ -31,9 +36,13 @@ class BookCreate(LoginRequiredMixin, CreateView):
     fields = '__all__'  
     success_url = reverse_lazy('books')
 
+    def form_valid(self, form):
+        form.istance.user = self.request.user
+        return super(BookCreate, self).form_valid(form)
+
 class BookUpdate(LoginRequiredMixin, UpdateView):
     model = Book 
-    fields = '__all__'  
+    fields = ['title', 'author', 'isbn', 'isread']  
     success_url = reverse_lazy('books') 
 
 class BookDelete(LoginRequiredMixin, DeleteView):
