@@ -33,11 +33,11 @@ class BookDetail(LoginRequiredMixin, DetailView):
 
 class BookCreate(LoginRequiredMixin, CreateView):
     model = Book   
-    fields = '__all__'  
+    fields = ['title', 'author', 'isbn', 'isread']   
     success_url = reverse_lazy('books')
 
     def form_valid(self, form):
-        form.istance.user = self.request.user
+        form.instance.user = self.request.user
         return super(BookCreate, self).form_valid(form)
 
 class BookUpdate(LoginRequiredMixin, UpdateView):
