@@ -47,6 +47,7 @@ class BookList(LoginRequiredMixin, ListView):
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
             context['books'] = context['books'].filter(title__startswith = search_input)
+        context['search_input'] = search_input
 
         return context
 
