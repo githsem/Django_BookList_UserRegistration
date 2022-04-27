@@ -6,6 +6,10 @@
 {% endif %}
 <h2>Book List</h2>
 <i><a href="{% url 'book-create' %}">Add Book</a></i>
+<form method="GET">
+    <input type="text" name="search-area">
+    <input type="submit" value="Search">
+</form>
 <hr>
 <table>
     <tr>
