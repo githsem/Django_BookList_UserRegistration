@@ -1,3 +1,6 @@
+{% extends "book/main.html" %}
+
+{% block content %}
 {% if request.user.is_authenticated %}
     <i><h5>Hello {{request.user|capfirst}}</h5></i>
     <a href="{% url 'logout' %}">Logout</a>
@@ -28,3 +31,5 @@
         <h3>No Books in List</h3>
     {% endfor %}
 </table>
+
+{% endblock content %}
