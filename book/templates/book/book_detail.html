@@ -1,15 +1,39 @@
-{% extends "book/main.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <h2>Book Detail</h2>
+    <p><i><a href="{% url 'books' %}">Back</a></i></p>
+     <div class="card" style="width: 33%;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static 'images/book1.jpg' %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{book.title}}<i class="material-icons right">...</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>{{book.author}}</p>
+      <p>{{book.isbn}}</p>
+      <p>{{book.added}}</p>
+    </div>
+  </div>
+</body>
+</html>
 
-{% block content %}
-<h2>Book Detail</h2>
-<p><i><a href="{% url 'books' %}">Back</a></i></p>
-<hr>
-<h4>{{book.title}}</h4>
-<h4>{{book.author}}</h4>
-<h4>{{book.isbn}}</h4>
-<h4>{{book.added}}</h4>
 
-{% endblock content %}
+
+ 
 
 
         
