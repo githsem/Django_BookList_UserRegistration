@@ -11,21 +11,21 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body>
+<body class="container">
     <h2>Book Detail</h2>
     <p><i><a href="{% url 'books' %}">Back</a></i></p>
      <div class="card" style="width: 33%;">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="{% static 'images/book1.jpg' %}">
+      <img class="activator" src="{% static 'images/book1.png' %}">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{book.title}}<i class="material-icons right">...</i></span>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-      <p>{{book.author}}</p>
-      <p>{{book.isbn}}</p>
-      <p>{{book.added}}</p>
+      <span class="card-title grey-text text-darken-4">{{book.title}}<i class="material-icons right">...</i></span>
+      <p><b>Author:   </b>  {{book.author}}</p>
+      <p><b>Isbn  :   </b>{{book.isbn}}</p>
+      <p><b>Date  :   </b>{{book.added}}</p>
     </div>
   </div>
 </body>
