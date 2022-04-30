@@ -1,3 +1,6 @@
+{% extends "book/main.html" %}
+
+{% block content %}
 <h2>Book Form</h2>
 <p><i><a href="{% url 'books' %}">Back</a></i></p>
 <hr>
@@ -6,3 +9,5 @@
     {{form.as_p}}
     <input type="submit" value="Submit">
 </form>
+
+{% endblock content %}
