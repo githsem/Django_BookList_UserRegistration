@@ -1,4 +1,6 @@
 {% load static %}
+{% extends "<book>
+<main></main>.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +24,13 @@
       <span class="card-title activator grey-text text-darken-4">{{book.title}}<i class="material-icons right">...</i></span>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{book.title}}<i class="material-icons right">...</i></span>
-      <p><b>Author:   </b>  {{book.author}}</p>
-      <p><b>Isbn  :   </b>{{book.isbn}}</p>
-      <p><b>Date  :   </b>{{book.added}}</p>
+      <span class="card-title grey-text text-darken-4"><b>{{book.title}}</b><i class="material-icons right">...</i></span>
+      <hr>
+      <div style="padding-top: 30px;">
+        <p><b>Author:   </b>  {{book.author}}</p>
+        <p><b>Isbn  :   </b>{{book.isbn}}</p>
+        <p><b>Date  :   </b>{{book.added}}</p>    
+      </div>
     </div>
   </div>
 </body>
