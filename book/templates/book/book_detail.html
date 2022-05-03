@@ -6,9 +6,9 @@
 <body class="container">
     <h2>Book Detail</h2>
     <p><i><a href="{% url 'books' %}">Back</a></i></p>
-     <div class="card" style="width: 33%;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="{% static 'images/book1.png' %}">
+     <div class="card">
+    <div class="card-image waves-effect waves-block waves-light" style="display:flex; justify-content: center;">
+      <img class="activator" style="width: 50%;" src="{% static 'images/book1.png' %}">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{book.title}}<i class="material-icons right">...</i></span>
