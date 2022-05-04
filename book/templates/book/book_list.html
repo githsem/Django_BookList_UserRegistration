@@ -11,10 +11,11 @@
 </div>
 <h2 style="text-align: center;">Book List</h2>
 <hr>
-<i><a href="{% url 'book-create' %}">Add Book</a></i>
+<a href="{% url 'book-create' %}"><i class=" medium material-icons">add_circle</i>Add Book</a>
 <form method="GET"  style="display: flex;">
     <input type="text" name="search-area" value="{{search_input}}">
     <input type="submit" value="Search" class="waves-effect waves-light btn">
+    
 </form>
 <hr>
 <table>
