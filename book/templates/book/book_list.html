@@ -16,8 +16,9 @@
     <input type="submit" value="Search" class="waves-effect waves-light btn">
 </form>
 <hr>
+
 {% for book in books %}
-<ul class="collection">
+  <ul class="collection">
     <li class="collection-item avatar">
     <i class="material-icons circle red">book</i>
       <span class="title">{{book.title}}</span>
@@ -27,9 +28,8 @@
       </p>
       <a href="{% url 'book_detail' book.id %}" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
-</ul>   
+</ul>  
 {% empty %}
 <h3>No Books in List</h3>
 {% endfor %} 
-
 {% endblock content %}
