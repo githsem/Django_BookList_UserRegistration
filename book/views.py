@@ -67,7 +67,7 @@ class BookCreate(LoginRequiredMixin, CreateView):
 class BookUpdate(LoginRequiredMixin, UpdateView):
     model = Book 
     fields = ['title', 'author', 'isbn', 'isread']  
-    success_url = reverse_lazy('book-update',1) 
+    success_url = reverse_lazy('book-update', kwargs={'pk': 1}) 
 
 class BookDelete(LoginRequiredMixin, DeleteView):
     model = Book
